@@ -1,3 +1,16 @@
+/* Produces no audio. Errors like:
+STATUS(generator) '257' = 'Decoding error 'lost synchronization' at byte offset 4209'
+STATUS(generator) '260' = 'Decoding error 'reserved sample frequency value' at byte offset'
+STATUS(generator) '257' = 'Decoding error 'lost synchronization' at byte offset 4209'
+...
+STATUS(generator) '257' = 'Decoding error 'lost synchronization' at byte offset 4209'
+STATUS(generator) '259' = 'Decoding error 'forbidden bitrate value' at byte offset 4209'
+STATUS(generator) '259' = 'Decoding error 'forbidden bitrate value' at byte offset 4209'
+STATUS(generator) '257' = 'Decoding error 'lost synchronization' at byte offset 4289'
+...
+STATUS(generator) '565' = 'Decoding error 'bad main_data_begin pointer' at byte offset 420'
+STATUS(generator) '565' = 'Decoding error 'bad main_data_begin pointer' at byte offset 436'
+*/
 /* includes from:
 https://github.com/bwbguard/M5Stack-Core2-MediaPlayer/blob/main/Core2_Media_Player.ino
 */
