@@ -1,7 +1,10 @@
-/* WAS working yesterday, now it's broken - no audio output - ???? */
-
-
-
+/* WAS working yesterday, now it's broken - no audio output - ???? Errors:
+STATUS(srcbuf) '2' = 'Refilling buffer'
+STATUS(generator) '257' = 'Decoding error 'lost synchronization' at byte offset 4308'
+STATUS(generator) '257' = 'Decoding error 'lost synchronization' at byte offset 7081'
+STATUS(generator) '565' = 'Decoding error 'bad main_data_begin pointer' at byte offset 708'
+STATUS(generator) '568' = 'Decoding error 'Huffman data overrun' at byte offset 32720'
+*/
 /* Includes from:
 https://gist.github.com/CelliesProjects/022235e5d126a3b8ce1b024c43ba6de5
 DONT WORK
