@@ -31,13 +31,14 @@ AudioOutputI2S *out;
 const char * url = "http://stream1.early1900s.org:8080";
 //const char * url = "http://streams.kut.org/4430_192.mp3?aw_0_1st.playerid=tmx-free";
 
-const char* ssid     = "MY SSID";
-const char* password = "MY PASSWORD";
+const char* ssid     = "changeme";
+const char* password = "changeme";
 
 void setup()
 {
   // bool LCDEnable, bool SDEnable, bool SerialEnable
-  M5.begin(true, false, true);
+  // setting speaker to false does not fix
+  M5.begin(true, true, true, true, kMBusModeOutput, false);
   M5.Lcd.setTextFont(2);
   WiFi.begin(ssid, password);
   M5.Lcd.printf("Connecting WiFi...\n");
@@ -51,12 +52,10 @@ void setup()
   // Create a buffer using that stream
   buff = new AudioFileSourceBuffer( file, 4096 );
   //out = new AudioOutputI2S(0, 2, -1); 
-  out = new AudioOutputI2S(0,2); 
+  out = new AudioOutputI2S(0,0); 
   out->SetPinout(12, 0, 2);
-  //out->SetOutputModeMono(true);
-  //out->SetRate(44100);
-  //out->SetChannels(1);
-  //out->SetBitsPerSample(8);
+  out->SetOutputModeMono(true);
+  //ineffective out->SetRate(44100);
   
   mp3 = new AudioGeneratorMP3();
   mp3->begin(buff, out);
