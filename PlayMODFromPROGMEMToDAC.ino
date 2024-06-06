@@ -1,3 +1,6 @@
+// This actually WORKS, after disabling SD in M5.begin 
+// This if the ESP8266Audio library examples
+
 #include <M5Core2.h>
 #include "AudioFileSourcePROGMEM.h"
 #include "AudioGeneratorMOD.h"
@@ -21,7 +24,7 @@ AudioOutputI2S *out;
 
 void setup()
 {
-  M5.begin();
+  M5.begin(true, false, true, true, kMBusModeOutput, false);
   WiFi.mode(WIFI_OFF); //WiFi.forceSleepBegin();
   Serial.begin(115200);
   delay(1000);
