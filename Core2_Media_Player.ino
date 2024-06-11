@@ -361,8 +361,7 @@ void setup() {
   Serial.begin(115200);
 
   M5.begin(true, false, true, true, kMBusModeOutput, false);
-
-  //M5.Axp.SetSpkEnable(true);
+  M5.Axp.SetSpkEnable(true);
   // Rotation 3: Green light on top, USB on right, breaks buttons
   // M5.Lcd.setRotation(3);
   M5.Lcd.fillScreen(BLACK);
